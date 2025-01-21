@@ -1,0 +1,53 @@
+# Dependencies
+**/node_modules
+**/dist
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+
+# Environment
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Angular specific
+/auth-app/client/.angular
+/auth-app/client/dist
+/auth-app/client/tmp
+/auth-app/client/out-tsc
+/auth-app/client/bazel-out
+/auth-app/client/.sass-cache
+/auth-app/client/connect.lock
+/auth-app/client/coverage
+/auth-app/client/libpeerconnection.log
+/auth-app/client/testem.log
+/auth-app/client/typings
+
+# Node/Express specific
+/auth-app/server/dist
+/auth-app/server/build
+/auth-app/server/coverage
+/auth-app/server/*.sqlite
+/auth-app/server/*.sqlite3
+/auth-app/server/*.db
+
+# Logs
+**/logs
+**/*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+
+# System Files
+.DS_Store
+Thumbs.db
+*~
+
+# TypeScript
+**/*.tsbuildinfo
