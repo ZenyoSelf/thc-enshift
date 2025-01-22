@@ -126,4 +126,35 @@ describe('Auth endpoints', () => {
                 expect(res.body.message).to.equal('Invalid credentials');
         });
     });
+
+    describe('GET /api/auth/profile', () => {
+        let token: string;
+    
+        before(async () => {
+            const res = await request(app)
+                .post('/api/auth/login')
+                .send({
+                    email: 'test@example.com',
+                    password: '1234'
+                });
+            token = res.body.token;
+        });
+    
+        it('should get user profile', async () => {
+            const res = await request(app)
+                .get('/api/auth/profile')
+                .set('Authorization', `Bearer ${token}`);
+    
+            expect(res.status).to.equal(200);
+            expect(res.body.user).to.have.property('email', 'test@example.com');
+            expect(res.body.user).to.not.have.property('password');
+        });
+    
+        it('should not get profile without token', async () => {
+            const res = await request(app)
+                .get('/api/auth/profile');
+    
+            expect(res.status).to.equal(401);
+        });
+    });
 });

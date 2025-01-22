@@ -106,7 +106,7 @@ export class AuthController {
 
 
     
-    static login =(req: Request, res: Response) => {
+    static login = (req: Request, res: Response) => {
         const db = DB.getInstance();
         const { email, password } = req.body;
 
@@ -208,7 +208,6 @@ export class AuthController {
         }
     }
 
-
     static async resetPassword(req: Request, res: Response) {
         const { token, newPassword } = req.body;
         const db = DB.getInstance();
@@ -242,7 +241,6 @@ export class AuthController {
             res.status(500).json({ message: 'Internal server error' });
         }
     }
-
 
     static async getProfile(req: Request, res: Response) {
         const db = DB.getInstance();
