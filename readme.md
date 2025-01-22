@@ -14,6 +14,7 @@ I did a "folder name routing" in a sense that every thing has a parent named aft
 This is to side more with the Angular way of naming things, to have a better Developer Experience. 
 For states, i like to use RXJS, even if in this context it might be overkill, i prefer to use it as soon as possible.
 
+I did a custom validator in regex for the email, as the one from angular doesnt check for a dot.
 
 
 BACKEND:
