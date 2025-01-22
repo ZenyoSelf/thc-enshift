@@ -36,7 +36,7 @@ export class EmailService {
       await this.createTestAccount();
     }
     //Might need to env the testing url too.
-    const resetLink = `${process.env.CLIENT_URL || 'http://localhost:4200'}/reset-password?token=${resetToken}`;
+    const resetLink = `${process.env.CLIENT_URL || 'http://localhost:4200'}/auth/reset-password?token=${resetToken}`;
 
     const mailOptions = {
       from: '"Take Home Challenge" <THC@thc.com>',
