@@ -4,8 +4,14 @@ import { DB } from './db/database';
 import authRoutes from './routes/auth.route';
 import dotenv from 'dotenv';
 import path from 'path';
-// Load environment variables from .env file
+import { EmailService } from './services/email.service';
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
+
+
+EmailService.createTestAccount()
+  .then(() => console.log('Email service initialized'))
+  .catch(console.error);
+  
 
 const PORT = process.env.PORT;
 const app = express();

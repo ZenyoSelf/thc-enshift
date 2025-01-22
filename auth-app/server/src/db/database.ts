@@ -24,7 +24,7 @@ export class DB {
 
   private static initTables() {
     const db = DB.getInstance();
-    
+
     db.run(`
       CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -32,6 +32,8 @@ export class DB {
         password TEXT NOT NULL,
         firstName TEXT,
         lastName TEXT,
+        reset_token TEXT,
+        reset_token_expiry INTEGER,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
       )
