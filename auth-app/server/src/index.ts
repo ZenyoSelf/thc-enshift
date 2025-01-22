@@ -14,7 +14,7 @@ EmailService.createTestAccount()
   
 
 const PORT = process.env.PORT;
-const app = express();
+export const app = express();
 
 // Middleware
 app.use(cors());

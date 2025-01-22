@@ -18,12 +18,42 @@ if (!JWT_SECRET) {
     throw new Error('JWT_SECRET is not defined in environment variables (Auth Controller)');
 }
 
+
 export class AuthController {
-    static async register(req: Request, res: Response) {
+
+
+    static isMailValid(email: string): boolean {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email)
+    }
+
+    static isPasswordValid(password: string) {
+        return password.length >= 2;
+    }
+
+    static register = (req: Request, res: Response) => {
         const db = DB.getInstance();
         const { email, password, firstName, lastName } = req.body;
 
+
         try {
+
+            //Check if the mail is valid
+            if (!this.isMailValid(email)) {
+                res.status(400).json({ message: 'Invalid email format' });
+                return;
+            }
+            //Check the password strength (2 char as put in the frontend)
+            if (!this.isPasswordValid(password)) {
+                res.status(400).json({ message: 'Password must be at least 2 characters long' });
+                return;
+            }
+
+            if (!email || !password || !firstName || !lastName) {
+                res.status(400).json({ message: 'Missing data' });
+                return;
+            }
+
             // Check if user exists
             db.get('SELECT email FROM users WHERE email = ?', [email], async (err, row) => {
                 if (err) {
@@ -74,11 +104,24 @@ export class AuthController {
         }
     }
 
-    static async login(req: Request, res: Response) {
+
+    
+    static login =(req: Request, res: Response) => {
         const db = DB.getInstance();
         const { email, password } = req.body;
 
         try {
+
+            if (!this.isMailValid(email)) {
+                console.log(email)
+                res.status(400).json({ message: 'Invalid email format' });
+                return;
+            }
+            if (!this.isPasswordValid(password)) {
+                console.log(password)
+                res.status(400).json({ message: 'Password must be at least 2 characters long' });
+                return;
+            }
             db.get(
                 'SELECT * FROM users WHERE email = ?',
                 [email],
@@ -223,3 +266,6 @@ export class AuthController {
         );
     }
 }
+
+
+
