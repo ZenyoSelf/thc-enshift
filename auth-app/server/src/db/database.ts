@@ -1,7 +1,7 @@
 import sqlite3 from 'sqlite3';
 import { Database } from 'sqlite3';
 import path from 'path';
-
+import bcrypt from 'bcrypt';
 export class DB {
   private static instance: Database;
 
@@ -22,7 +22,7 @@ export class DB {
     return DB.instance;
   }
 
-  private static initTables() {
+  private static async initTables() {
     const db = DB.getInstance();
 
     db.run(`
@@ -38,6 +38,11 @@ export class DB {
         updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
       )
     `);
+      const hashedPassword = await bcrypt.hash("SuperSecretTestingPassword1", 12);
+    db.run(`INSERT INTO users (email, password, firstName, lastName)
+              VALUES ('test@cypress.io', '${hashedPassword}', 'Cypress', 'Test')
+              ON CONFLICT(email) DO UPDATE SET 
+              password = '${hashedPassword}';`);
   }
 
   static close() {

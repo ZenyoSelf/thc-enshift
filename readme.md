@@ -17,6 +17,10 @@ For states, i like to use RXJS, even if in this context it might be overkill, i 
 I did a custom validator in regex for the email, as the one from angular doesnt check for a dot.
 
 
+
+At first i went for angular material, as i had only used react these past months, it felt weird to go back to Angular.
+I switched to PrimeNG, as it is what i'm familiar with, and it also has a lot of components that are easy to use and customize.
+
 BACKEND:
 
 i will use sqlite3 as it is straightforward and doesn't need to install anything.
