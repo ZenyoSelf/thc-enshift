@@ -12,16 +12,16 @@ Before anything, check you have **node 22** installed, **angular-cli** and **cyp
 - Clone the repo.
 - inside the auth-app folder, open a terminal and write the following.
 
-		``npm run install:all``
+		npm run install:all
 
 - After it's done, add the .env file for the server, at the root of the folder and create an auth.db file :
 
-		```
+		
 		server
 		│ src
 		│ .env
 		│ auth.db
-		```
+		
 
 Inside the .env there needs to be two value :
 
@@ -33,10 +33,9 @@ Inside the .env there needs to be two value :
 
 Once that's done, you can run these commands on two terminals :
 
-``npm run start:server``
+		npm run start:server
 
-``npm run start:client``
-
+		npm run start:client
   
 
 And voilà !
@@ -55,7 +54,7 @@ The app should be running at http://localhost:4200
 
 Units testing is run with :
 
-``npm run test:server``
+		npm run test:server
 
 The result should be displayed in your IDE -> Tests results.
 
@@ -71,7 +70,7 @@ For cypress, you can either choose headless, or standard cypress with it's GUI.
 
 GUI version :
 
-``npm run test:client-e2e``
+		npm run test:client-e2e
 
   
 
@@ -79,13 +78,13 @@ When you want to have the headless tests results, you need to have the server ru
 
 Then you can run this in another terminal :
 
-``npm run test:client-e2e-headless``
+		npm run test:client-e2e-headless
 
 If it isn't working, here's a simple fix :
 
 - run the client and server on different terminals.
 - go into the client folder with another terminal, and run :
-	``npm run e2e:headless``
+		npm run e2e:headless
 
 If test fails, screenshots will appear in the cypress folder.
 
