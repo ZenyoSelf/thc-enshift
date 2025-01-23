@@ -94,23 +94,33 @@ If test fails, screenshots will appear in the cypress folder.
 
 I like to keep it simple and fast, i choosed to build this app with these technologies :
 
-  
+ 1. Frontend
+ - Angular/PrimeNG for UI components, coupled with Tailwind
+ - Reactive forms for validation
+ - Auth interceptor for token management
+ - Route guards for protected paths
+ - Observable pattern for auth state
+ - Standalone components
 
-- Angular coupled with PrimeNG and tailwind, should be enough to have a great look and good maintainability using TypeScript.
+ 2. Backend
+- SQLite3 for simplicity and zero-config database.
+- Express middleware pattern for auth checks.
+- Bcrypto for hashing and JWT for stateless authentication.
+- Ethereal email for testing without SMTP setup.
 
-- RxJs for State Management.
 
-- Express with some native nodejs for the backend and SQLite3 for the DB.
+ 3. Testing:
+- Mocha / Chai for unit testing backend
+- Cypress for e2e frontend testing
+- Test isolation with database cleanup
+- Mocked email service
 
-- JWT and bcrypto for hashing and sessions management.
+ 4. Project Structure:
+- Monorepo with client/server separation
+- Feature-based organization
+- TypeScript for type safety
+- Environment-specific configurations
 
-- I don't believe in Frontend unit tests. I choosed Cypress to do e2e testing for this app.
-
-- Simple Chai and Mocha for backend unit tests.
-
-  
-  
-  
 
 ## Train of thoughts
 
