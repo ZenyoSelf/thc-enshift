@@ -11,8 +11,11 @@ Before anything, check you have **node 22** installed, **angular-cli** and **cyp
 
 - Clone the repo.
 - inside the auth-app folder, open a terminal and write the following.
+
 		``npm run install:all``
+
 - After it's done, add the .env file for the server, at the root of the folder and create an auth.db file :
+
 		```
 		server
 		│ src
