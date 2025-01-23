@@ -2,6 +2,9 @@
     "scripts": {
       "start:client": "cd client && ng serve",
       "start:server": "cd server && npm run dev",
+      "test:client-e2e":"cd client && ng e2e",
+      "test:client-e2e-headless":"cd client && ng e2e --headless",
+      "test:server":"cd server && npm run test",
       "install:all": "npm install && cd client && npm install && cd ../server && npm install"
     }
   }
