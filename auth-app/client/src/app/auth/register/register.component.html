@@ -1,0 +1,52 @@
+<p-toast/>
+<div class="min-h-screen flex flex-col items-center justify-center">
+    <div
+        class="surface-card p-4 shadow-2 border-round w-full  lg:justify-around flex min-h-full justify-around flex-col lg:self-center lg:max-w-md">
+        <div class="text-center mb-5">
+            <img src="enshift-logo.svg" alt="Image" height="50" class="mb-3">
+            <div class="text-900 text-3xl font-medium mb-3">Register</div>
+            <span class="text-600 font-medium line-height-3">Already have an account?</span>
+            <a routerLink="/auth/login" class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Click here to
+                login!</a>
+        </div>
+
+        <div>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <label for="firstName" class="block text-900 font-medium mb-2">First name</label>
+                <input id="firstName"  data-cy="firstname-input" formControlName="firstName" type="text" placeholder="Guillaume" pInputText
+                    class="w-full mb-3">
+                <small class="p-error block mb-2"
+                    *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.dirty">
+                    First name is required</small>
+                <label for="lastName" class="block text-900 font-medium mb-2">Last name</label>
+                <input id="lastName" data-cy="lastname-input" formControlName="lastName" type="text" placeholder="Heinz" pInputText
+                    class="w-full mb-3">
+                <small class="p-error block mb-2"
+                    *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.dirty">
+                    Last name is required</small>
+                <label for="email" class="block text-900 font-medium mb-2">Email</label>
+                <input id="email" data-cy="email-input" type="text" formControlName="email" placeholder="example@domain.com" pInputText
+                    email="true" class="w-full mb-3">
+                <small class="p-error block mb-2"
+                    *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.dirty">
+                    wrong email format</small>
+                <label for="password" class="block text-900 font-medium mb-2">Password</label>
+                <input id="password" data-cy="password-input" type="password" formControlName="password" placeholder="..." pInputText
+                    class="w-full mb-3">
+                    <small class="p-error block mb-2"
+                    *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.dirty">
+                    Your password needs more than 2 characters</small>
+
+                <label for="confirmPassword" class="block text-900 font-medium mb-2">Confirm your password</label>
+                <input id="confirmPassword" data-cy="confirmpassword-input" formControlName="passwordConfirm" type="password" placeholder="..."
+                    pInputText class="w-full mb-3">
+                    <small class="p-error block mb-2"
+                    *ngIf="registerForm.errors?.['mismatch'] && registerForm.get('passwordConfirm')?.dirty">
+                    Your password is not matching</small>
+
+                <button pButton pRipple label="Register" data-cy="register-button" [loading]="loading" class="w-full"></button>
+            </form>
+        </div>
+
+    </div>
+</div>

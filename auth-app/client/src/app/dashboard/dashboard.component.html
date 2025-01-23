@@ -1,0 +1,33 @@
+<div class="min-h-screen">
+    <div class="m-5">
+        <p-menubar>
+            <ng-template #start>
+                <img src="enshift-logo.svg" alt="Image" height="35" class="m-1">
+            </ng-template>
+
+            <ng-template #end>
+                <div class="flex items-center gap-2">
+                    <p-menu #menu [model]="items" [popup]="true" />
+
+
+                    <p-avatar (click)="menu.toggle($event)" class="cursor-pointer"
+                        [label]="((currentUser$ | async)?.firstName?.charAt(0) || '') + ((currentUser$ | async)?.lastName?.charAt(0) || '')"
+                        shape="circle" />
+                </div>
+            </ng-template>
+        </p-menubar>
+    </div>
+
+    <main class="py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-2xl font-semibold ">Logged On</h1>
+
+            <div class="mt-6">
+                <div class="bg-gray-800 shadow rounded-lg p-6">
+                    <p>Welcome to logged on page of this Take-Home-Challenge !</p>
+                    <p>Use the avatar icon on the top right to log off and kill the session.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
