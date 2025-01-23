@@ -1,11 +1,11 @@
 
 # Take Home Challenge - Arnaud Soltermann
 
-### This is my submition for the Take Home Challenge
+### This is my submission for the Take Home Challenge
 
   
 
-Before anything, check you have **node 22** installed, **angular-cli** and **cypress**.  
+Before starting, check that you have **node 22** installed, **angular-cli** and **cypress**.  
 
 ## Setup
 
@@ -92,7 +92,7 @@ If test fails, screenshots will appear in the cypress folder.
 
   
 
-I like to keep it simple and fast, i choosed to build this app with these technologies :
+I like to keep it simple and fast, i chose to build this app with these technologies :
 
  1. Frontend
  - Angular/PrimeNG for UI components, coupled with Tailwind
@@ -126,7 +126,7 @@ I like to keep it simple and fast, i choosed to build this app with these techno
 
   
 
-I made some notes during this adventure, it is not grammaticly checked or even make sense, but i would like to share it as it can help see how i arrived at this state of a product.
+I made some notes during this adventure, it is not grammatically checked or even make sense, but i would like to share it as it can help see how i arrived at this state of a product.
 
   
 ### Notes
@@ -138,7 +138,7 @@ made client with angular cli.
   
 
 
-I used TS, as it is cleaner and has a better maintanability in the future (especially for cross technologies projects).
+I used TS, as it is cleaner and has a better maintainability in the future (especially for cross technologies projects).
 
 Frontend will use PrimeNG and jwt for sessions.
 
@@ -159,15 +159,15 @@ At first i went for angular material, as i had only used react these past months
 I switched to PrimeNG, as it is what i'm familiar with, and it also has a lot of components that are easy to use and customize.
 
 
-i will use sqlite3 as it is straightforward and doesn't need to install anything.
+I chose SQLite3 as it is straightforward and doesn't need to install anything.
 
-i'll use bcrypt for basic hashing.
+I implemented bcrypt for basic hashing.
 
 nodemailer for the password recovery flow.
 
 I did a simple middleware for the profile, at first i wanted to use it for session (remember Me).
 
-My approach is to put the initTables inside the start routine, so that if i need to adapt the DB, no need to run another script everytime (less things to do in the future)
+My approach is to put the initTables inside the start routine, so that if i need to adapt the DB, no need to run another script everytime (fewer things to do in the future)
 
   
 
@@ -177,9 +177,9 @@ I firstly went for an Angular Material framework, which was a bad idea to start 
 
 After having a file structure (login, signup & dashboard), i swapped angular material with PrimeNG, which i have already used in the past.
 
-They have a great list of components with extansible customization and is easely setupped.
+They have a great list of components with extensible customization and is easily set up.
 
-I also implemented Tailwind with it, just to have a better DX with layoutting.
+I also implemented Tailwind with it, just to have a better DX with layout.
 
   
 
@@ -191,7 +191,7 @@ Login and register is pretty straightforward.
 
   
 
-Now for the DB init, i decided to put the InitTables inside, to have a way to easily create or update tables and data in the future. This reduces maintanability drasticly.
+Now for the DB init, i decided to put the InitTables inside, to have a way to easily create or update tables and data in the future. This reduces maintainability drastically.
 
   
 
@@ -203,7 +203,7 @@ I choosed bcrypt for hashing passwords.
 
 i will implement .env in the future, i want to have 1 env for both projects, will see if i have enough time for such things, otherwise i'll just explain the steps on how to run the dev setup.
 
-After scratching my head multiple times with the JWT, guard and the auth service, i finnally have a persisent login system.
+After scratching my head multiple times with the JWT, guard and the auth service, i finally have a persistent login system.
 
 Being confident with the fact that it "works", i spent some time having a flat look and feel of the app. Added a Toast for future notifications, button with some animation, worked on the responsiveness of it and more.
 
@@ -215,7 +215,7 @@ I saw a weird thing with the Validators.email from angular, as i could use somet
 
   
 
-Before tests, i decided to do the password recovery flow, i knew i was gonna have problem with the testing of it (need to manually go to the logged link for the token), but even so, i started working on it.
+Before tests, i decided to do the password recovery flow, i knew i was going to have problem with the testing of it (need to manually go to the logged link for the token), but even so, i started working on it.
 
 2 new endpoints was created, the forgot-password and reset-password.
 
@@ -229,7 +229,7 @@ Nodemailer is easy to use, and ethereal is the perfect one to have a dev build.
 
   
 
-After extansive tests, i was happy with the global result.
+After extensive tests, i was happy with the global result.
 
 It was time to do the tests.
 
