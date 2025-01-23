@@ -5,42 +5,20 @@
 
   
 
-Before anything, check you have node 22 installed, angular-cli and cypress.
+Before anything, check you have **node 22** installed, **angular-cli** and **cypress**.  
 
-  
-
-Here's a step-by-step for booting up the application :
-
-  
-
-start by cloning the repo.
-
-  
-  
-
-# Setup
-
-  
+## Setup
 
 - Clone the repo.
-
 - inside the auth-app folder, open a terminal and write the following.
-
-``npm run install:all``
-
+		``npm run install:all``
 - After it's done, add the .env file for the server, at the root of the folder and create an auth.db file :
-
-```
-
-server
-
-│ src
-
-│ .env
-
-│ auth.db
-
-```
+		```
+		server
+		│ src
+		│ .env
+		│ auth.db
+		```
 
 Inside the .env there needs to be two value :
 
@@ -60,6 +38,8 @@ Once that's done, you can run these commands on two terminals :
 
 And voilà !
 
+The app should be running at http://localhost:4200
+
   
 
 ## Tests
@@ -76,7 +56,7 @@ Units testing is run with :
 
 The result should be displayed in your IDE -> Tests results.
 
-If it doesn't, it can be displayed inside your terminal.
+If it doesn't, it is displayed inside your terminal.
 
   
 
@@ -92,22 +72,21 @@ GUI version :
 
   
 
-When you want to have the headless tests results, you need to have the server and client running.
+When you want to have the headless tests results, you need to have the server running.
 
 Then you can run this in another terminal :
 
 ``npm run test:client-e2e-headless``
 
-  
+If it isn't working, here's a simple fix :
+
+- run the client and server on different terminals.
+- go into the client folder with another terminal, and run :
+	``npm run e2e:headless``
 
 If test fails, screenshots will appear in the cypress folder.
 
-  
-  
-  
-  
-
-# Architectural Decisions
+## Architectural Decisions
 
   
 
@@ -115,7 +94,7 @@ I like to keep it simple and fast, i choosed to build this app with these techno
 
   
 
-- Angular coupled with PrimeNG and tailwind, should be enough to have a great look and good maintanibility using TypeScript.
+- Angular coupled with PrimeNG and tailwind, should be enough to have a great look and good maintainability using TypeScript.
 
 - RxJs for State Management.
 
@@ -131,14 +110,14 @@ I like to keep it simple and fast, i choosed to build this app with these techno
   
   
 
-# Train of thoughts
+## Train of thoughts
 
   
 
 I made some notes during this adventure, it is not grammaticly checked or even make sense, but i would like to share it as it can help see how i arrived at this state of a product.
 
   
-  
+### Notes
 
 separated client and server.
 
@@ -146,9 +125,6 @@ made client with angular cli.
 
   
 
-FRONTEND :
-
-  
 
 I used TS, as it is cleaner and has a better maintanability in the future (especially for cross technologies projects).
 
@@ -170,11 +146,6 @@ At first i went for angular material, as i had only used react these past months
 
 I switched to PrimeNG, as it is what i'm familiar with, and it also has a lot of components that are easy to use and customize.
 
-  
-
-BACKEND:
-
-  
 
 i will use sqlite3 as it is straightforward and doesn't need to install anything.
 
