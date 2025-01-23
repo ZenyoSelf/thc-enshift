@@ -103,10 +103,10 @@ I like to keep it simple and fast, i choosed to build this app with these techno
  - Standalone components
 
  2. Backend
-- SQLite3 for simplicity and zero-config database.
-- Express middleware pattern for auth checks.
-- Bcrypto for hashing and JWT for stateless authentication.
-- Ethereal email for testing without SMTP setup.
+- SQLite3 for simplicity and zero-config database
+- Express middleware pattern for auth checks
+- Bcrypto for hashing and JWT for stateless authentication
+- Ethereal email for testing without SMTP setup
 
 
  3. Testing:
